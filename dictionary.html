@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINI DICTIONARY</title>
+</head>
+<body>
+    <div class="container">
+        <h2>MINI DICTIONARY</h2>
+
+        <form action="" method="get">
+            <input type="text" id="in" placeholder="Enter a Search Keyword"><br>
+            <button type="button" onclick="dictionary()">Search</button>
+        </form>
+
+        <div class="result">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function dictionary(){
+            var word = document.getElementById('in').value;
+            var res = document.getElementById('result');
+
+            const dict = {
+                noun:"A name of anything",
+                pronoun:"Word used instead of a noun",
+                verb: "An action word"
+            }
+
+            if(word==""){
+                res.innerHTML = "Please enter a search keyword..";
+            }
+            else if(!dict[word]){
+                res.innerHTML = "The word "+word+" is not in this dictionary";
+            }
+            else{
+                res.innerHTML = dict[word]
+            }
+
+        }
+    </script>
+</body>
+</html>
